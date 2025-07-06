@@ -63,4 +63,9 @@ while True:
             print("no tasks to be saved")
 
     if choice == 6:
+        if len(tasks) != 0:
+            with open("C:/to-do-list/to-do-list/list.txt", "w") as f:
+                for i in range(int(len(tasks)/2)):
+                    f.write(f"{'-'.join((tasks.get(f'task {i+1}')).split(' '))} {tasks.get(f'done {i+1}')}\n")
+                print("tasks saved successfuly")
         break
